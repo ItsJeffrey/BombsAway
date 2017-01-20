@@ -13,6 +13,8 @@ namespace BombsAway
 {
     public partial class Form1 : Form
     {
+        public int cNum;
+        
         public Form1()
         {
             InitializeComponent();
@@ -714,6 +716,7 @@ namespace BombsAway
                             case 9:
                             case 10:
                             case 11:
+                                cNum = 1;
                                 NextSpot = NextBomb(Bombs);
                                 PictureBox Coin = new PictureBox();
                                 Coin.Name = "Coin";
@@ -865,6 +868,10 @@ namespace BombsAway
                 if (Bomb != null)
                 {
                     x++;
+                    if (cNum == 1)
+                    {
+                        x--;
+                    }
                 }
             }
             return x;
